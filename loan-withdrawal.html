@@ -355,23 +355,22 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                  
-<!-- Logo -->
+        <!-- Logo -->
 <div class="flex-shrink-0">
   <div class="flex items-center">
-    <img src="wallet.png" alt="Swift Loan Logo" class="h-16 w-auto">
-    <span class="ml-3 text-2xl font-bold text-[#225AAC]">Swift Loan</span>
+    <div class="w-10 h-10 swift-primary-bg rounded-lg flex items-center justify-center">
+      <!-- Simple wallet with lightning -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <!-- wallet outline -->
+        <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+        <!-- lightning inside -->
+        <path d="M13 8l-3 5h2v3l3-5h-2V8z" fill="currentColor"/>
+      </svg>
+    </div>
+    <span class="ml-3 text-2xl font-bold text-[#225AAC]">Swift Loan Wallet</span>
   </div>
 </div>
                 </div>
-
-                <!-- Action Buttons -->
-                <div class="flex items-center space-x-3">
-                    <button onclick="goBack()" class="border border-primary text-primary hover:bg-primary hover:bg-opacity-10 px-4 py-2 text-sm font-medium rounded-md transition-swift">
-                        <i class="fas fa-arrow-left mr-1"></i> 
-                    </button>
-                </div>
-            </div>
-        </div>
     </header>
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -542,7 +541,7 @@
                     <span>•</span>
                     <span>
                         <i class="fas fa-shield-alt mr-1"></i>
-                        Approved
+                        CBK Approved
                     </span>
                 </div>
             </div>
@@ -1721,11 +1720,18 @@ if (status === 'success') {
     container.innerHTML = `
       <div class="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 space-y-6">
         <!-- Header -->
-        <div class="flex justify-between items-center border-b pb-4">
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <i class="fas fa-bolt text-white text-lg"></i>
-            </div>
+<div class="flex justify-between items-center border-b pb-4">
+  <div class="flex items-center space-x-3">
+    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+      <!-- Wallet with lightning -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <!-- wallet -->
+        <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+        <!-- lightning -->
+        <path d="M13 8l-3 5h2v3l3-5h-2V8z" fill="currentColor"/>
+      </svg>
+    </div>
+    <div>
             <div>
               <h2 class="text-lg font-bold text-gray-900">Swift Loan Wallet</h2>
               <p class="text-xs text-gray-500">Loan Withdrawal Receipt</p>
