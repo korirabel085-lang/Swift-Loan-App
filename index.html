@@ -1416,7 +1416,42 @@
             alert('App download will be available soon! You can apply for loans directly on our website.');
         }
     </script>
+ 
+<!-- Firebase Authentication Script -->
+<script>
+  // Firebase Configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBV01v57xGKUy-vUmVZw2vzHQa6FPBayHI",
+    authDomain: "imarikaweb.firebaseapp.com",
+    projectId: "imarikaweb",
+    storageBucket: "imarikaweb.firebasestorage.app",
+    messagingSenderId: "683019239334",
+    appId: "1:683019239334:web:37212f42f75d23aec81967",
+    measurementId: "G-6PJXZWQ6NE"
+  };
 
+  // ✅ Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // ✅ Check authentication and session age
+  firebase.auth().onAuthStateChanged(user => {
+    const loginKey = "imarika_last_login";
+    const lastLogin = localStorage.getItem(loginKey);
+    const now = Date.now();
+    const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+
+    const expired = !lastLogin || now - parseInt(lastLogin) > maxAge;
+
+    if (!user || expired) {
+      localStorage.removeItem(loginKey);
+      firebase.auth().signOut().finally(() => {
+        window.location.href = "login.html";
+      });
+    } else {
+      localStorage.setItem(loginKey, now.toString());
+      updateAuthUI?.(user); // Only if defined elsewhere
+    }
+  });
 
     </script>
 </body>
