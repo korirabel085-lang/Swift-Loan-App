@@ -354,23 +354,24 @@
     <header class="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                 
-        <!-- Logo -->
-<div class="flex-shrink-0">
-  <div class="flex items-center">
-    <div class="w-10 h-10 swift-primary-bg rounded-lg flex items-center justify-center">
-      <!-- Simple wallet with lightning -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-        <!-- wallet outline -->
-        <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
-        <!-- lightning inside -->
-        <path d="M13 8l-3 5h2v3l3-5h-2V8z" fill="currentColor"/>
-      </svg>
-    </div>
-    <span class="ml-3 text-2xl font-bold text-[#225AAC]">Swift Loan Wallet</span>
-  </div>
-</div>
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 swift-primary-bg rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-white text-xl"></i>
+                        </div>
+                        <span class="ml-3 text-xl font-bold text-gray-900">Swift Loan Wallet</span>
+                    </div>
                 </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="goBack()" class="border border-primary text-primary hover:bg-primary hover:bg-opacity-10 px-4 py-2 text-sm font-medium rounded-md transition-swift">
+                        <i class="fas fa-arrow-left mr-1"></i> 
+                    </button>
+                </div>
+            </div>
+        </div>
     </header>
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -381,7 +382,6 @@
                 Loan Transfer to wallet  was Successfull & Ready for Withdrawal.
 
                 powered by CHASEBANK and regulated by CBK
-          
             </div>
 
             <h1 class="hero-title text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
@@ -541,7 +541,7 @@
                     <span>•</span>
                     <span>
                         <i class="fas fa-shield-alt mr-1"></i>
-                        CBK Approved
+                        Approved amount
                     </span>
                 </div>
             </div>
@@ -716,7 +716,7 @@
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900">M-Pesa</h4>
                                 <p class="text-sm text-gray-600">Instant mobile money transfer</p>
-                                <p class="text-xs text-green-600 font-medium">Most Popular • 3 minutes</p>
+                                <p class="text-xs text-green-600 font-medium">Most Popular • 2 minutes</p>
                             </div>
                             <div class="text-gray-400">
                                 <i class="fas fa-chevron-right"></i>
@@ -733,7 +733,7 @@
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900">Airtel Money</h4>
                                 <p class="text-sm text-gray-600">Mobile money transfer</p>
-                                <p class="text-xs text-red-600 font-medium">Fast • 3 - 5 minutes</p>
+                                <p class="text-xs text-red-600 font-medium">Fast • 2-3 minutes</p>
                             </div>
                             <div class="text-gray-400">
                                 <i class="fas fa-chevron-right"></i>
@@ -750,7 +750,7 @@
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-gray-900">Bank Transfer</h4>
                                 <p class="text-sm text-gray-600">Direct transfer to your bank account</p>
-                                <p class="text-xs text-blue-600 font-medium">Secure • less than 10 minutes</p>
+                                <p class="text-xs text-blue-600 font-medium">Secure • 3-5 minutes</p>
                             </div>
                             <div class="text-gray-400">
                                 <i class="fas fa-chevron-right"></i>
@@ -1725,15 +1725,6 @@ if (status === 'success') {
             <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <i class="fas fa-bolt text-white text-lg"></i>
             </div>
-            <div>
-              <h2 class="text-lg font-bold text-gray-900">Swift Loan Wallet</h2>
-              <p class="text-xs text-gray-500">Loan Withdrawal Receipt</p>
-            </div>
-          </div>
-          <span class="px-3 py-1 text-sm font-semibold rounded-full ${statusPillClass}">
-  ${statusLabel}
-</span>
-</div>
             <div>
               <h2 class="text-lg font-bold text-gray-900">Swift Loan Wallet</h2>
               <p class="text-xs text-gray-500">Loan Withdrawal Receipt</p>
