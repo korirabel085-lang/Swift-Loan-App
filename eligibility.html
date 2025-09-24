@@ -597,44 +597,43 @@
                             <div class="validation-message mt-2 text-sm"></div>
                         </div>
                          <!-- Gender -->
-                        <div>
-                            <label for="gender" class="block text-sm font-semibold text-gray-700 mb-3">
-                                <i data-feather="users" class="w-4 h-4 inline mr-2 swift-primary"></i>
-                                Gender *
-                            </label>
-                            <select 
-                                id="gender" 
-                                name="gender" 
-                                required
-                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-swift"
-                            >
-                                <option value="">Select gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <div class="validation-message mt-2 text-sm"></div>
-                        </div>
-                    </div>
+<div>
+  <label for="gender" class="block text-sm font-semibold text-gray-700 mb-3">
+    <i data-feather="users" class="w-4 h-4 inline mr-2 swift-primary"></i>
+    Gender *
+  </label>
+  <select 
+      id="gender" 
+      name="gender" 
+      required
+      class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-swift"
+  >
+      <option value="">Select gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+  </select>
+  <div class="validation-message mt-2 text-sm"></div>
+</div>
 
-                        <!-- National ID -->
-                        <div>
-                            <label for="nationalId" class="block text-sm font-semibold text-gray-700 mb-3">
-                                <i data-feather="credit-card" class="w-4 h-4 inline mr-2 swift-primary"></i>
-                                National ID Number
-                            </label>
-                            <input 
-                                type="text" 
-                                id="nationalId" 
-                                name="nationalId" 
-                                required
-                                maxlength="8"
-                                class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-swift placeholder-gray-400 text-lg"
-                                placeholder="12345678"
-                            >
-                            <div class="validation-message mt-2 text-sm"></div>
-                        </div>
-
+<!-- National ID -->
+<div class="mt-6">
+  <label for="nationalId" class="block text-sm font-semibold text-gray-700 mb-3">
+    <i data-feather="credit-card" class="w-4 h-4 inline mr-2 swift-primary"></i>
+    National ID Number <span class="text-gray-500">(8 or 9 digits)</span>
+  </label>
+  <input 
+      type="text" 
+      id="nationalId" 
+      name="nationalId" 
+      required
+      pattern="^\d{8,9}$"
+      maxlength="9"
+      class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-swift placeholder-gray-400 text-lg"
+      placeholder="12345678 or 123456789"
+  >
+  <div class="validation-message mt-2 text-sm"></div>
+</div>
                         <!-- Date of Birth -->
                         <div>
                             <label for="dateOfBirth" class="block text-sm font-semibold text-gray-700 mb-3">
@@ -685,7 +684,43 @@
                             <div class="validation-message mt-2 text-sm"></div>
                         </div>
                     </div>
-
+                    <!-- Marital Status -->
+<div class="mt-6">
+  <label for="maritalStatus" class="block text-sm font-semibold text-gray-700 mb-3">
+    <i data-feather="heart" class="w-4 h-4 inline mr-2 swift-primary"></i>
+    Marital Status *
+  </label>
+  <select 
+      id="maritalStatus" 
+      name="maritalStatus" 
+      required
+      class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-swift"
+  >
+      <option value="">Select marital status</option>
+      <option value="single">Single</option>
+      <option value="married">Married</option>
+      <option value="divorced">Divorced</option>
+      <option value="widowed">Widowed</option>
+  </select>
+  <div class="validation-message mt-2 text-sm"></div>
+</div>
+ 
+<!-- Alternative Phone Number -->
+<div class="mt-6">
+  <label for="altPhoneNumber" class="block text-sm font-semibold text-gray-700 mb-3">
+    <i data-feather="smartphone" class="w-4 h-4 inline mr-2 swift-primary"></i>
+    Alternative Phone Number (Optional)
+  </label>
+  <input 
+      type="tel" 
+      id="altPhoneNumber" 
+      name="altPhoneNumber" 
+      pattern="^\d{10,12}$"
+      class="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-swift placeholder-gray-400 text-lg"
+      placeholder="0712345678 or 254712345678"
+  >
+  <div class="validation-message mt-2 text-sm"></div>
+</div>
                     <!-- Next Button -->
                     <div class="mt-10 flex justify-end">
                         <button 
@@ -703,7 +738,7 @@
                     <div class="mt-6 text-center">
                         <p class="swift-primary font-semibold flex items-center justify-center">
                             <i data-feather="arrow-down" class="w-4 h-4 mr-2 animate-bounce"></i>
-                            Please scroll down to proceed
+                            Click NEXT button to proceed
                         </p>
                     </div>
                 </div>
@@ -1231,9 +1266,9 @@
                         message: 'Please enter at least two names'
                     },
                     nationalId: {
-                        validate: (value) => /^\d{8}$/.test(value.trim()),
-                        message: 'ID must be exactly 8 digits'
-                    },
+    validate: (value) => /^\d{8,9}$/.test(value.trim()),
+    message: 'ID must be 8 or 9 digits'
+},
                     dateOfBirth: {
                         validate: (value) => {
                             const dobDate = new Date(value);
